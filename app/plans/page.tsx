@@ -144,10 +144,12 @@ export default function PlansPage() {
             <div className="bg-white rounded-xl p-6 md:p-8 shadow-sm">
               <h2 className="text-xl md:text-2xl font-bold mb-4">Important Information</h2>
               <div className="space-y-4 text-sm md:text-base text-gray-600">
-                <p>Ellington Insurance is a trading name of [Your Company Legal Name]. We are an independent insurance intermediary currently in the process of obtaining authorization from the Financial Conduct Authority (FCA).</p>
-                <p>The information provided on this website is for general information purposes only and does not constitute financial advice. For specific advice about your insurance needs, please contact us directly.</p>
-                <p>Insurance products will be provided through our panel of carefully selected insurance providers. All insurance products are subject to terms, conditions, and eligibility criteria.</p>
-                <p>Your premium will be based on your individual circumstances and the level of coverage selected. Any quotations provided will be valid for 30 days from the date of issue.</p>
+                <p>
+                  Ellington Insurance is an independent insurance intermediary. All insurance products will be provided, administered, and underwritten by an insurance provider authorised and regulated by the FCA. Policies are subject to the insurer's terms, conditions, and eligibility criteria.
+                </p>
+                <p>
+                  The information provided on this website is for general guidance only and does not constitute financial advice. We recommend speaking with our team to understand which coverage options best suit your needs.
+                </p>
               </div>
             </div>
           </div>
