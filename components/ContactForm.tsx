@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -30,34 +31,34 @@ const ContactForm = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10 relative overflow-hidden">
+      {/* Hero Section - More compact on mobile */}
+      <section className="py-10 md:py-20 bg-gradient-to-br from-primary/10 to-secondary/10 relative overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
               Contact & <span className="text-primary">Support</span>
             </h1>
-            <p className="text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
+            <p className="text-base md:text-xl text-gray-700 mb-6 md:mb-10 max-w-3xl mx-auto">
               Our team is here to help with your questions, provide personalized quotes, or assist with your existing policy.
             </p>
           </div>
         </div>
         <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-60 h-60 bg-primary rounded-full filter blur-3xl"></div>
-          <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-secondary rounded-full filter blur-3xl"></div>
+          <div className="absolute -top-20 -right-20 w-40 md:w-60 h-40 md:h-60 bg-primary rounded-full filter blur-3xl"></div>
+          <div className="absolute -bottom-20 -left-20 w-40 md:w-60 h-40 md:h-60 bg-secondary rounded-full filter blur-3xl"></div>
         </div>
       </section>
 
-      {/* Contact Form and Info */}
-      <section className="py-20 bg-white">
+      {/* Contact Form and Info - Adjusted spacing */}
+      <section className="py-10 md:py-20 bg-white">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
             {/* Contact Form */}
-            <div className="bg-light p-8 md:p-10 rounded-2xl shadow-sm">
+            <div className="bg-light p-4 md:p-8 lg:p-10 rounded-2xl shadow-sm">
               {!submitted ? (
                 <>
-                  <h2 className="text-2xl md:text-3xl font-bold mb-6">Send Us a Message</h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6">Send Us a Message</h2>
+                  <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
@@ -176,7 +177,7 @@ const ContactForm = () => {
                   </form>
                 </>
               ) : (
-                <div className="text-center py-16">
+                <div className="text-center py-8 md:py-16">
                   <svg className="w-16 h-16 text-primary mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -203,14 +204,14 @@ const ContactForm = () => {
               )}
             </div>
 
-            {/* Contact Information */}
+            {/* Contact Information - More compact on mobile */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Contact Information</h2>
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6">Contact Information</h2>
               
-              <div className="space-y-8">
+              <div className="space-y-6 md:space-y-8">
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Customer Support</h3>
-                  <ul className="space-y-4">
+                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Customer Support</h3>
+                  <ul className="space-y-3 md:space-y-4">
                     <li className="flex items-start">
                       <svg className="h-6 w-6 text-primary mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -227,7 +228,7 @@ const ContactForm = () => {
                       </svg>
                       <div>
                         <p className="font-medium">Email Support</p>
-                        <p className="text-gray-600">support@ellington.com</p>
+                        <p className="text-gray-600">support@ellingtoninsurance.co.uk</p>
                         <p className="text-sm text-gray-500">24/7 response, typically within 24 hours</p>
                       </div>
                     </li>
@@ -244,39 +245,37 @@ const ContactForm = () => {
                   </ul>
                 </div>
                 
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Claims & Emergencies</h3>
-                  <p className="text-gray-600 mb-4">
-                    For urgent assistance with claims or policy services:
-                  </p>
-                  <div className="bg-primary/10 p-4 rounded-lg">
-                    <p className="font-medium text-primary">Claims Hotline: 1-800-CLAIMS (1-800-252-4672)</p>
-                    <p className="text-sm">Available 24/7 for emergency support</p>
+                <div className="mt-6 md:mt-8">
+                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Contact Information</h3>
+                  <div className="space-y-3 md:space-y-4">
+                    <div className="flex items-center">
+                      <EnvelopeIcon className="h-5 w-5 text-primary mr-3" />
+                      <p className="text-gray-600 text-sm md:text-base">support@ellingtoninsurance.co.uk</p>
+                    </div>
+                    <div className="flex items-center">
+                      <MapPinIcon className="h-5 w-5 text-primary mr-3" />
+                      <div>
+                        <p className="text-sm md:text-base">Ellington Insurance Headquarters</p>
+                        <p className="text-gray-600 text-sm md:text-base">123 Insurance Plaza, Suite 100</p>
+                        <p className="text-gray-600 text-sm md:text-base">London</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Office Location</h3>
-                  <address className="not-italic text-gray-600">
-                    <p>Ellington Insurance Headquarters</p>
-                    <p>1234 Innovation Drive, Suite 500</p>
-                    <p>Techville, CA 94103</p>
-                  </address>
-                </div>
-                
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-                  <div className="flex space-x-4">
+                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Connect With Us</h3>
+                  <div className="flex space-x-3 md:space-x-4">
                     {['twitter', 'facebook', 'linkedin', 'instagram'].map((platform) => (
                       <a
                         key={platform}
                         href={`https://${platform}.com/ellingtoninsurance`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
+                        className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                         aria-label={`Follow Ellington Insurance on ${platform}`}
                       >
-                        <span className="capitalize">{platform.charAt(0)}</span>
+                        <span className="capitalize text-sm md:text-base">{platform.charAt(0)}</span>
                       </a>
                     ))}
                   </div>
@@ -287,21 +286,21 @@ const ContactForm = () => {
         </div>
       </section>
 
-      {/* Account Access Section */}
-      <section className="py-16 bg-light">
+      {/* Account Access Section - More compact on mobile */}
+      <section className="py-10 md:py-16 bg-light">
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+          <div className="max-w-4xl mx-auto text-center px-4">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-6">
               Access Your Account
             </h2>
-            <p className="text-xl text-gray-700 mb-8">
+            <p className="text-base md:text-xl text-gray-700 mb-6 md:mb-8">
               Existing customers can access policy information, make changes, and view documents through our secure portal.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="#" className="btn-primary">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
+              <Link href="#" className="btn-primary text-sm md:text-base py-2 px-4 md:py-3 md:px-6">
                 Log In to Portal
               </Link>
-              <Link href="#" className="btn-outline">
+              <Link href="#" className="btn-outline text-sm md:text-base py-2 px-4 md:py-3 md:px-6">
                 Register Account
               </Link>
             </div>
