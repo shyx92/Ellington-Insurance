@@ -18,10 +18,10 @@ const testimonials = [
     image: '/images/testimonials/michaela-testimonial.jpg',
   },
   {
-    name: 'Emily Rodriguez',
-    role: 'Healthcare Professional',
-    content: 'Being in healthcare, I understand the value of proper coverage. Ellington Insurance\'s smart system provided recommendations I hadn\'t even considered. Their platform makes insurance actually understandable.',
+    name: 'Emily Thompson',
+    role: 'Small Business Owner',
     image: '/images/testimonials/emily-testimonial.jpg',
+    content: 'Ellington Insurance made finding the right coverage straightforward. Their team was professional and helped me understand exactly what I needed.',
   },
   {
     name: 'David Williams',
