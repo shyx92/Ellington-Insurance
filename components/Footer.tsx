@@ -68,13 +68,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="text-center text-gray-400 text-sm space-y-4">
-            <p>Ellington Insurance is a trading name of [Your Company Legal Name]. Registered in England and Wales (Company No. XXXXXX).</p>
-            <p>We are an independent insurance intermediary currently in the process of obtaining authorization from the Financial Conduct Authority (FCA).</p>
-            <p>The information on this website is for general guidance only and does not constitute financial advice.</p>
-            <p>&copy; {currentYear} Ellington Insurance. All rights reserved.</p>
-          </div>
+        <div className="border-t border-gray-800 pt-8 mt-8">
+          <p className="text-sm text-gray-400 text-center">
+            Ellington Insurance is an independent insurance intermediary. All insurance products will be provided, administered, and underwritten by an insurance provider authorised and regulated by the FCA. Policies are subject to the insurer's terms, conditions, and eligibility criteria.
+          </p>
+          <p className="text-sm text-gray-400 text-center mt-4">
+            © {new Date().getFullYear()} Ellington Insurance. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
