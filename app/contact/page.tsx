@@ -58,6 +58,14 @@ const ContactPage = () => {
               <ContactForm />
             </div>
           </div>
+          <div className="mt-8 text-sm text-gray-500">
+            <p className="mb-4">
+              Ellington Insurance is an independent insurance intermediary. All insurance products will be provided, administered, and underwritten by an insurance provider authorised and regulated by the FCA. Policies are subject to the insurer's terms, conditions, and eligibility criteria.
+            </p>
+            <p>
+              By submitting this form, you agree to our processing of your personal data in accordance with our Privacy Policy. We will only use your information to respond to your enquiry and provide relevant insurance services.
+            </p>
+          </div>
         </div>
       </div>
     </main>
