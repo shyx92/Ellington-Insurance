@@ -5,28 +5,25 @@ import Link from 'next/link';
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-    policyHolder: 'no',
-  });
-
   const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // In a real implementation, you would send the data to your backend
+    // Here you would typically send the form data to your backend
     setSubmitted(true);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   return (
@@ -59,121 +56,56 @@ const ContactForm = () => {
                 <>
                   <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6">Send Us a Message</h2>
                   <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 gap-6">
                       <div>
-                        <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                          First Name*
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                          Full Name
                         </label>
                         <input
                           type="text"
-                          id="firstName"
-                          name="firstName"
-                          required
-                          value={formData.firstName}
+                          id="name"
+                          name="name"
+                          value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                          required
                         />
                       </div>
-                      <div>
-                        <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                          Last Name*
-                        </label>
-                        <input
-                          type="text"
-                          id="lastName"
-                          name="lastName"
-                          required
-                          value={formData.lastName}
-                          onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                          Email Address*
+                          Email Address
                         </label>
                         <input
                           type="email"
                           id="email"
                           name="email"
-                          required
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                          Phone Number
-                        </label>
-                        <input
-                          type="tel"
-                          id="phone"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                          required
                         />
                       </div>
                     </div>
-
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                        Subject*
-                      </label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        required
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
-                      />
-                    </div>
-
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                        Message*
+                        Message
                       </label>
                       <textarea
                         id="message"
                         name="message"
-                        rows={5}
-                        required
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                        rows={4}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                        required
                       ></textarea>
                     </div>
-
-                    <div>
-                      <label htmlFor="policyHolder" className="block text-sm font-medium text-gray-700 mb-1">
-                        Are you an existing policy holder?
-                      </label>
-                      <select
-                        id="policyHolder"
-                        name="policyHolder"
-                        value={formData.policyHolder}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
-                      >
-                        <option value="no">No</option>
-                        <option value="yes">Yes</option>
-                      </select>
-                    </div>
-
-                    <div className="pt-4">
-                      <button
-                        type="submit"
-                        className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors"
-                      >
-                        Send Message
-                      </button>
-                    </div>
+                    <button
+                      type="submit"
+                      className="w-full bg-primary text-white py-2 px-6 rounded-lg hover:bg-primary/90 transition-colors"
+                    >
+                      Send Message
+                    </button>
                   </form>
                 </>
               ) : (
@@ -181,25 +113,10 @@ const ContactForm = () => {
                   <svg className="w-16 h-16 text-primary mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
-                  <p className="text-gray-600 mb-6">Your message has been sent successfully. We'll get back to you as soon as possible.</p>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({
-                        firstName: '',
-                        lastName: '',
-                        email: '',
-                        phone: '',
-                        subject: '',
-                        message: '',
-                        policyHolder: 'no',
-                      });
-                    }}
-                    className="bg-primary text-white py-2 px-6 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Send Another Message
-                  </button>
+                  <h3 className="text-2xl font-bold mb-4">Thank You!</h3>
+                  <p className="text-gray-600">
+                    We've received your message and will get back to you within 24 hours.
+                  </p>
                 </div>
               )}
             </div>
@@ -210,56 +127,10 @@ const ContactForm = () => {
               
               <div className="space-y-6 md:space-y-8">
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Customer Support</h3>
-                  <ul className="space-y-3 md:space-y-4">
-                    <li className="flex items-start">
-                      <svg className="h-6 w-6 text-primary mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                      <div>
-                        <p className="font-medium">Phone Support</p>
-                        <p className="text-gray-600">1-800-ELLINGTON</p>
-                        <p className="text-sm text-gray-500">Monday - Friday, 8am - 8pm EST</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="h-6 w-6 text-primary mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      <div>
-                        <p className="font-medium">Email Support</p>
-                        <p className="text-gray-600">support@ellingtoninsurance.co.uk</p>
-                        <p className="text-sm text-gray-500">24/7 response, typically within 24 hours</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <svg className="h-6 w-6 text-primary mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                      </svg>
-                      <div>
-                        <p className="font-medium">Live Chat</p>
-                        <p className="text-gray-600">Available through our client portal</p>
-                        <p className="text-sm text-gray-500">Monday - Saturday, 9am - 9pm EST</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="mt-6 md:mt-8">
-                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Contact Information</h3>
-                  <div className="space-y-3 md:space-y-4">
-                    <div className="flex items-center">
-                      <EnvelopeIcon className="h-5 w-5 text-primary mr-3" />
-                      <p className="text-gray-600 text-sm md:text-base">support@ellingtoninsurance.co.uk</p>
-                    </div>
-                    <div className="flex items-center">
-                      <MapPinIcon className="h-5 w-5 text-primary mr-3" />
-                      <div>
-                        <p className="text-sm md:text-base">Ellington Insurance Headquarters</p>
-                        <p className="text-gray-600 text-sm md:text-base">123 Insurance Plaza, Suite 100</p>
-                        <p className="text-gray-600 text-sm md:text-base">London</p>
-                      </div>
-                    </div>
+                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Email Support</h3>
+                  <div className="flex items-center">
+                    <EnvelopeIcon className="h-5 w-5 text-primary mr-3" />
+                    <p className="text-gray-600 text-sm md:text-base">support@ellingtoninsurance.co.uk</p>
                   </div>
                 </div>
                 

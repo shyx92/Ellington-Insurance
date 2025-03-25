@@ -1,5 +1,5 @@
 import ContactForm from '../../components/ContactForm'
-import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 
 export const metadata = {
   title: 'Contact Us | Ellington Insurance',
@@ -27,10 +27,6 @@ const ContactPage = () => {
                     <div className="flex items-center">
                       <EnvelopeIcon className="h-5 w-5 text-primary" />
                       <span className="ml-3 text-sm md:text-base">support@ellingtoninsurance.co.uk</span>
-                    </div>
-                    <div className="flex items-center">
-                      <MapPinIcon className="h-5 w-5 text-primary" />
-                      <span className="ml-3 text-sm md:text-base">123 Insurance Plaza, Suite 100, London</span>
                     </div>
                   </dl>
                 </div>

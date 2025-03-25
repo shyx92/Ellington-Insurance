@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -51,11 +51,7 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-300">
               <li className="flex items-center">
                 <EnvelopeIcon className="h-5 w-5 text-primary" />
-                <span>support@ellingtoninsurance.co.uk</span>
-              </li>
-              <li className="flex items-center">
-                <MapPinIcon className="h-5 w-5 text-primary" />
-                <span>123 Insurance Plaza, Suite 100, London</span>
+                <span className="ml-2">support@ellingtoninsurance.co.uk</span>
               </li>
             </ul>
 
@@ -75,8 +71,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
-          <p>© {currentYear} Ellington Insurance. All rights reserved.</p>
+
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <div className="text-center text-gray-400 text-sm">
+            <p>&copy; {currentYear} Ellington Insurance. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>

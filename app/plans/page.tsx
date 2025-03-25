@@ -33,7 +33,7 @@ const plans = [
       'Monthly coverage optimization',
       'Family protection options',
       'Life event triggered reviews',
-      'Priority support (chat & email)',
+      'Priority email support',
     ],
     coverage: '£250,000 - £1,000,000',
   },
@@ -49,8 +49,8 @@ const plans = [
       'Weekly coverage optimization',
       'Predictive life event planning',
       'Multi-policy coordination',
-      'Dedicated account representative',
-      '24/7 priority support (phone, chat & email)',
+      'Dedicated account manager',
+      '24/7 priority email support',
     ],
     coverage: '£500,000 - £5,000,000',
   },
@@ -208,7 +208,7 @@ export default function PlansPage() {
                           featureValue = j === 0 ? 'Quarterly' : j === 1 ? 'Monthly' : 'Weekly';
                           break;
                         case 'Support channels':
-                          featureValue = j === 0 ? 'Email' : j === 1 ? 'Chat & Email' : 'Phone, Chat & Email';
+                          featureValue = j === 0 ? 'Email' : j === 1 ? 'Priority Email' : '24/7 Priority Email';
                           break;
                         case 'Support availability':
                           featureValue = j === 0 ? 'Business hours' : j === 1 ? 'Extended hours' : '24/7';
