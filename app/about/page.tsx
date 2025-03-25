@@ -156,8 +156,9 @@ export default function AboutPage() {
                 image: '/images/team/david-park.jpg'
               },
               {
-                name: 'Daisy',
-                role: 'Operations Team',
+                name: 'Daisy Williams',
+                role: 'Operations Director',
+                bio: 'Focused on building efficient systems that deliver consistent excellence in our service and product offerings.',
                 image: '/images/team/olivia-williams.jpg'
               },
             ].map((member, index) => (
