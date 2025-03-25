@@ -160,24 +160,6 @@ const ContactForm = () => {
                     Ellington Insurance is an independent insurance intermediary. All insurance products will be provided, administered, and underwritten by an insurance provider authorised and regulated by the FCA. Policies are subject to the insurer's terms, conditions, and eligibility criteria.
                   </p>
                 </div>
-
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">Connect With Us</h3>
-                  <div className="flex space-x-3 md:space-x-4">
-                    {['linkedin'].map((platform) => (
-                      <a
-                        key={platform}
-                        href={`https://${platform}.com/ellingtoninsurance`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
-                        aria-label={`Follow Ellington Insurance on ${platform}`}
-                      >
-                        <span className="capitalize text-sm md:text-base">{platform.charAt(0)}</span>
-                      </a>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
           </div>
