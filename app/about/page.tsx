@@ -163,13 +163,14 @@ export default function AboutPage() {
               },
             ].map((member, index) => (
               <div key={index} className="bg-light p-8 rounded-xl hover:shadow-lg transition-shadow duration-300">
-                <div className="relative w-48 h-48 rounded-full overflow-hidden mb-6 mx-auto">
+                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mb-6 mx-auto">
                   <Image 
                     src={member.image}
                     alt={`${member.name} - ${member.role} at Ellington Insurance`}
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority
                   />
                 </div>
                 <h3 className="text-xl font-bold text-center mb-2">{member.name}</h3>
